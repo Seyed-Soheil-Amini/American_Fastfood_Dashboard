@@ -1,0 +1,472 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<StiSerializer version="1.02" type="Net" application="StiReport">
+  <CalculationMode>Interpretation</CalculationMode>
+  <Dictionary Ref="1" type="Dictionary" isKey="true">
+    <BusinessObjects isList="true" count="0" />
+    <Databases isList="true" count="1">
+      <USFastFood Ref="2" type="Stimulsoft.Report.Dictionary.StiExcelDatabase" isKey="true">
+        <Alias>USFastFood</Alias>
+        <Key>f84c9334396f4bfd9607e4bcf79f6b91</Key>
+        <Name>USFastFood</Name>
+        <PathData>C:\Users\Soheil Amini\Downloads\USFastFood.xlsx</PathData>
+      </USFastFood>
+    </Databases>
+    <DataSources isList="true" count="4">
+      <Products Ref="3" type="DataTableSource" isKey="true">
+        <Alias>Products</Alias>
+        <Columns isList="true" count="7">
+          <value>ProductsID,System.Double</value>
+          <value>Products,System.String</value>
+          <value>Rank,System.Double</value>
+          <value>CategoryID,System.Double</value>
+          <value>CategoryName,System.String</value>
+          <value>UnitPrice,System.Double</value>
+          <value>Calories,System.Double</value>
+        </Columns>
+        <Dictionary isRef="1" />
+        <Key>3058ec1eeb604c2ca2bea410320ba483</Key>
+        <Name>Products</Name>
+        <NameInSource>USFastFood.Products</NameInSource>
+      </Products>
+      <RestaurantbyState Ref="4" type="DataTableSource" isKey="true">
+        <Alias>RestaurantbyState</Alias>
+        <Columns isList="true" count="12">
+          <value>StateID,System.Double</value>
+          <value>State,System.String</value>
+          <value>McDonald_x0027_s,System.Double</value>
+          <value>Wendy_x0027_s_x0020__x0028_with_x0020_Franchise_x0029_,System.Double</value>
+          <value>Burger_x0020_King,System.Double</value>
+          <value>_x0020_Sales_x0020_Volume_x0020_McDonald_x0027_s,System.Double</value>
+          <value>_x0020_Sales_x0020_Volume_x0020_Wendy_x0027_s,System.Double</value>
+          <value>_x0020_Sales_x0020_Volume_x0020_Burger_x0020_King,System.Double</value>
+          <value>McDonald_x0027_s_x0020_One_x0020_Restaurant_x0020_per_x0020_Population,System.Double</value>
+          <value>Wendy_x0027_s_x0020_One_x0020_Restaurant_x0020_per_x0020_Population,System.Double</value>
+          <value>Burger_x0020_King_x0020__x0020_One_x0020_Restaurant_x0020_per_x0020_Population,System.Double</value>
+          <value>Population,System.Double</value>
+        </Columns>
+        <Dictionary isRef="1" />
+        <Key>19f3be57d03049e9b2727a19fc8b80c0</Key>
+        <Name>RestaurantbyState</Name>
+        <NameInSource>USFastFood.RestaurantbyState</NameInSource>
+      </RestaurantbyState>
+      <SalesbyMonth Ref="5" type="DataTableSource" isKey="true">
+        <Alias>SalesbyMonth</Alias>
+        <Columns isList="true" count="7">
+          <value>StateID,System.Double</value>
+          <value>State,System.String</value>
+          <value>MonthID,System.Double</value>
+          <value>MonthName,System.String</value>
+          <value>McDonald_x0027_s,System.Double</value>
+          <value>Wendy_x0027_s,System.Double</value>
+          <value>Burger_x0020_King,System.Double</value>
+        </Columns>
+        <Dictionary isRef="1" />
+        <Key>96e96d60352044a886f17f496a834122</Key>
+        <Name>SalesbyMonth</Name>
+        <NameInSource>USFastFood.SalesbyMonth</NameInSource>
+      </SalesbyMonth>
+      <TargetSales Ref="6" type="DataTableSource" isKey="true">
+        <Alias>TargetSales</Alias>
+        <Columns isList="true" count="11">
+          <value>State1,System.Double</value>
+          <value>StateName,System.String</value>
+          <value>CategoryID,System.Double</value>
+          <value>CategoryName,System.String</value>
+          <value>ProductID,System.Double</value>
+          <value>ProductsName,System.String</value>
+          <value>Sales,System.Double</value>
+          <value>Target,System.Double</value>
+          <value>Units,System.Double</value>
+          <value>Units_x0020_Target,System.Double</value>
+          <value>Price,System.Double</value>
+        </Columns>
+        <Dictionary isRef="1" />
+        <Key>b51d3bdea36e449a97a466a41101bfdd</Key>
+        <Name>TargetSales</Name>
+        <NameInSource>USFastFood.TargetSales</NameInSource>
+      </TargetSales>
+    </DataSources>
+    <Relations isList="true" count="4">
+      <States Ref="7" type="DataRelation" isKey="true">
+        <Alias>States</Alias>
+        <ChildColumns isList="true" count="1">
+          <value>StateID</value>
+        </ChildColumns>
+        <ChildSource isRef="5" />
+        <Dictionary isRef="1" />
+        <Key>f36d4a52b8724c3c9bda3690c3aeb700</Key>
+        <Name>States</Name>
+        <NameInSource>Relation</NameInSource>
+        <ParentColumns isList="true" count="1">
+          <value>StateID</value>
+        </ParentColumns>
+        <ParentSource isRef="4" />
+      </States>
+      <States Ref="8" type="DataRelation" isKey="true">
+        <Alias>States</Alias>
+        <ChildColumns isList="true" count="1">
+          <value>State1</value>
+        </ChildColumns>
+        <ChildSource isRef="6" />
+        <Dictionary isRef="1" />
+        <Key>8b1c426d7d934dee95c103b6e2ed1625</Key>
+        <Name>States</Name>
+        <NameInSource>Relation2</NameInSource>
+        <ParentColumns isList="true" count="1">
+          <value>StateID</value>
+        </ParentColumns>
+        <ParentSource isRef="4" />
+      </States>
+      <Products Ref="9" type="DataRelation" isKey="true">
+        <Alias>Products</Alias>
+        <ChildColumns isList="true" count="1">
+          <value>ProductID</value>
+        </ChildColumns>
+        <ChildSource isRef="6" />
+        <Dictionary isRef="1" />
+        <Key>37473ce2f4484450aae3f8c4d110fd34</Key>
+        <Name>Products</Name>
+        <NameInSource>Relation3</NameInSource>
+        <ParentColumns isList="true" count="1">
+          <value>ProductsID</value>
+        </ParentColumns>
+        <ParentSource isRef="3" />
+      </Products>
+      <Categories Ref="10" type="DataRelation" isKey="true">
+        <Alias>Categories</Alias>
+        <ChildColumns isList="true" count="1">
+          <value>CategoryID</value>
+        </ChildColumns>
+        <ChildSource isRef="6" />
+        <Dictionary isRef="1" />
+        <Key>2bda7e67abc746f79936c4a90c2d46c0</Key>
+        <Name>Categories</Name>
+        <NameInSource>Relation4</NameInSource>
+        <ParentColumns isList="true" count="1">
+          <value>CategoryID</value>
+        </ParentColumns>
+        <ParentSource isRef="3" />
+      </Categories>
+    </Relations>
+    <Report isRef="0" />
+    <Resources isList="true" count="0" />
+    <UserFunctions isList="true" count="0" />
+    <Variables isList="true" count="0" />
+  </Dictionary>
+  <EngineVersion>EngineV2</EngineVersion>
+  <GlobalizationStrings isList="true" count="0" />
+  <Key>649fecdf2f074963a89e9e3e11227f9e</Key>
+  <MetaTags isList="true" count="0" />
+  <Pages isList="true" count="1">
+    <Dashboard1 Ref="11" type="Stimulsoft.Dashboard.Components.StiDashboard" isKey="true">
+      <Components isList="true" count="6">
+        <RegionMap1 Ref="12" type="Stimulsoft.Dashboard.Components.RegionMap.StiRegionMapElement" isKey="true">
+          <ClientRectangle>540,40,660,300</ClientRectangle>
+          <DataFilters isList="true" count="0" />
+          <DataFrom>DataColumns</DataFrom>
+          <Expressions isList="true" count="0" />
+          <Guid>a528e75615dd41ea8f4293e064a4aba3</Guid>
+          <KeyMeter Ref="13" type="Stimulsoft.Dashboard.Components.RegionMap.StiKeyMapMeter" isKey="true">
+            <Expression>TargetSales.StateName</Expression>
+            <Key>5326728a2c754bd68a1bf3afeef7af3e</Key>
+            <Label>StateName</Label>
+          </KeyMeter>
+          <Labels Ref="14" type="Stimulsoft.Report.Maps.StiMapLabels" isKey="true">
+            <Font>Arial,10</Font>
+            <ForeColor>Transparent</ForeColor>
+            <ShadowColor>Transparent</ShadowColor>
+          </Labels>
+          <MapIdent>USA</MapIdent>
+          <Name>RegionMap1</Name>
+          <NameMeter Ref="15" type="Stimulsoft.Dashboard.Components.RegionMap.StiNameMapMeter" isKey="true">
+            <Expression>TargetSales.StateName</Expression>
+            <Key>6894d08eac1a4191b23c69cbdc649a33</Key>
+            <Label>StateName</Label>
+          </NameMeter>
+          <Page isRef="11" />
+          <Parent isRef="11" />
+          <Style>Green</Style>
+          <Title Ref="16" type="Stimulsoft.Dashboard.Components.StiTitle" isKey="true">
+            <Font>Arial,11</Font>
+            <Text>Region Map</Text>
+            <Visible>False</Visible>
+          </Title>
+          <TransformActions isList="true" count="0" />
+          <TransformFilters isList="true" count="0" />
+          <TransformSorts isList="true" count="0" />
+          <UserFilters isList="true" count="0" />
+          <ValueFormat Ref="17" type="NumberFormat" isKey="true">
+            <DecimalDigits>1</DecimalDigits>
+            <GroupSeparator>,</GroupSeparator>
+            <NegativePattern>1</NegativePattern>
+            <State>DecimalDigits, Abbreviation</State>
+            <UseGroupSeparator>False</UseGroupSeparator>
+          </ValueFormat>
+        </RegionMap1>
+        <Chart1 Ref="18" type="Stimulsoft.Dashboard.Components.Chart.StiChartElement" isKey="true">
+          <Area Ref="19" type="Stimulsoft.Dashboard.Components.Chart.StiChartArea" isKey="true">
+            <InterlacingHor Ref="20" type="Stimulsoft.Dashboard.Components.Chart.StiHorChartInterlacing" isKey="true" />
+            <InterlacingVert Ref="21" type="Stimulsoft.Dashboard.Components.Chart.StiVertChartInterlacing" isKey="true" />
+          </Area>
+          <Arguments isList="true" count="1">
+            <Item13 Ref="22" type="Stimulsoft.Dashboard.Components.Chart.StiArgumentChartMeter" isKey="true">
+              <Expression>TargetSales.ProductsName</Expression>
+              <Key>f67785e35e2040ffa24eaf6ace415ddb</Key>
+              <Label>ProductsName</Label>
+            </Item13>
+          </Arguments>
+          <ChartConditions isList="true" count="0" />
+          <ClientRectangle>0,340,1200,260</ClientRectangle>
+          <CloseValues isList="true" count="0" />
+          <ConstantLines isList="true" count="0" />
+          <DataFilters isList="true" count="0" />
+          <EndValues isList="true" count="0" />
+          <Expressions isList="true" count="0" />
+          <Guid>b4dcd37a6e034061b66f954335fdbafb</Guid>
+          <HighValues isList="true" count="0" />
+          <Labels Ref="23" type="Stimulsoft.Dashboard.Components.Chart.StiChartLabels" isKey="true">
+            <Font>Arial,8</Font>
+            <Width>0</Width>
+          </Labels>
+          <Legend Ref="24" type="Stimulsoft.Dashboard.Components.Chart.StiChartLegend" isKey="true">
+            <Labels Ref="25" type="Stimulsoft.Dashboard.Components.Chart.StiChartLegendLabels" isKey="true">
+              <Font>Arial,8</Font>
+            </Labels>
+            <Title Ref="26" type="Stimulsoft.Dashboard.Components.Chart.StiChartLegendTitle" isKey="true">
+              <Font>Arial,12,Bold</Font>
+            </Title>
+          </Legend>
+          <LowValues isList="true" count="0" />
+          <ManuallyEnteredChartMeter Ref="27" type="Stimulsoft.Dashboard.Components.Chart.StiValueChartMeter" isKey="true">
+            <Key>0586db204a334ca399f041f5389889aa</Key>
+          </ManuallyEnteredChartMeter>
+          <ManuallyEnteredData>H4sIAAAAAAAEAIvm5VJQiAYRCgpKYYk5palKOlCea14KqoBzTn5xKqqQT345qoBHZnoGqohjUXppbmpeCVwgPBWoBsENTi3KTC1WAvFiebliAcwjTseRAAAAWklQ</ManuallyEnteredData>
+          <Marker Ref="28" type="Stimulsoft.Dashboard.Components.Chart.StiChartMarker" isKey="true" />
+          <Name>Chart1</Name>
+          <NegativeSeriesColors />
+          <Page isRef="11" />
+          <Parent isRef="11" />
+          <ParetoSeriesColors />
+          <RoundValues>True</RoundValues>
+          <SeriesColors />
+          <Style>Green</Style>
+          <Title Ref="29" type="Stimulsoft.Dashboard.Components.StiTitle" isKey="true">
+            <Font>Arial,11</Font>
+            <Text>Chart</Text>
+            <Visible>False</Visible>
+          </Title>
+          <TopN Ref="30" type="Stimulsoft.Data.Engine.StiDataTopN" isKey="true" />
+          <TransformActions isList="true" count="0" />
+          <TransformFilters isList="true" count="0" />
+          <TransformSorts isList="true" count="0" />
+          <TrendLines isList="true" count="0" />
+          <UserFilters isList="true" count="0" />
+          <UserSorts isList="true" count="0" />
+          <UserViewStates isList="true" count="0" />
+          <ValueFormat Ref="31" type="NumberFormat" isKey="true">
+            <DecimalDigits>0</DecimalDigits>
+            <GroupSeparator>,</GroupSeparator>
+            <NegativePattern>1</NegativePattern>
+            <State>DecimalDigits, Abbreviation</State>
+          </ValueFormat>
+          <Values isList="true" count="1">
+            <Item14 Ref="32" type="Stimulsoft.Dashboard.Components.Chart.StiValueChartMeter" isKey="true">
+              <Expression>Sum(TargetSales.Sales);</Expression>
+              <Key>c299266df8d745649a726ffa6a25bfeb</Key>
+              <Label>Sales</Label>
+            </Item14>
+          </Values>
+          <Weights isList="true" count="0" />
+        </Chart1>
+        <Indicator1 Ref="33" type="Stimulsoft.Dashboard.Components.Indicator.StiIndicatorElement" isKey="true">
+          <ClientRectangle>200,40,340,160</ClientRectangle>
+          <DataFilters isList="true" count="0" />
+          <Expressions isList="true" count="0" />
+          <Font>Arial,13</Font>
+          <Guid>9e4eb980dba04116852b5e9dbc24a926</Guid>
+          <IconRangeMode>Percentage</IconRangeMode>
+          <IconRanges isList="true" count="0" />
+          <IconSet>Rating</IconSet>
+          <IndicatorConditions isList="true" count="0" />
+          <ManuallyEnteredData>H4sIAAAAAAAEAIvm5VJQiAYRCgpKYYk5palKOlBeSGJRemoJnBucWpSZWqwE4sXycsUCALmUbWY5AAAAWklQ</ManuallyEnteredData>
+          <Name>Indicator1</Name>
+          <Page isRef="11" />
+          <Parent isRef="11" />
+          <Series Ref="34" type="Stimulsoft.Dashboard.Components.Indicator.StiSeriesIndicatorMeter" isKey="true">
+            <Expression>TargetSales.CategoryName</Expression>
+            <Key>d1d054ac1249427db3f287a7d2931712</Key>
+            <Label>CategoryName</Label>
+          </Series>
+          <Target Ref="35" type="Stimulsoft.Dashboard.Components.Indicator.StiTargetIndicatorMeter" isKey="true">
+            <Expression>Sum(TargetSales.Target)</Expression>
+            <Key>3b785cd5fe9f4ef49e379a684ffba332</Key>
+            <Label>Target</Label>
+          </Target>
+          <TargetFormat Ref="36" type="PercentageFormat" isKey="true">
+            <DecimalDigits>2</DecimalDigits>
+            <GroupSeparator>,</GroupSeparator>
+            <NegativePattern>1</NegativePattern>
+            <PositivePattern>1</PositivePattern>
+            <Symbol>%</Symbol>
+          </TargetFormat>
+          <Title Ref="37" type="Stimulsoft.Dashboard.Components.StiTitle" isKey="true">
+            <Font>Arial,11</Font>
+            <Text>Indicator</Text>
+            <Visible>False</Visible>
+          </Title>
+          <TopN Ref="38" type="Stimulsoft.Data.Engine.StiDataTopN" isKey="true" />
+          <TransformActions isList="true" count="0" />
+          <TransformFilters isList="true" count="0" />
+          <TransformSorts isList="true" count="0" />
+          <UserSorts isList="true" count="0" />
+          <Value Ref="39" type="Stimulsoft.Dashboard.Components.Indicator.StiValueIndicatorMeter" isKey="true">
+            <Expression>Sum(TargetSales.Sales)</Expression>
+            <Key>99827b71b4cf49b3aaf440588d6e03eb</Key>
+            <Label>Sales</Label>
+          </Value>
+        </Indicator1>
+        <Progress1 Ref="40" type="Stimulsoft.Dashboard.Components.Progress.StiProgressElement" isKey="true">
+          <ClientRectangle>200,200,340,140</ClientRectangle>
+          <DataFilters isList="true" count="0" />
+          <Expressions isList="true" count="0" />
+          <Font>Arial,13</Font>
+          <Guid>4b586b0b09b44cfdbbbee9488ce429b6</Guid>
+          <ManuallyEnteredData>H4sIAAAAAAAEAIvm5VJQiAYRCgpKYYk5palKOlBeSGJRemoJnBucWpSZWqwE4sXycsUCALmUbWY5AAAAWklQ</ManuallyEnteredData>
+          <Mode>DataBars</Mode>
+          <Name>Progress1</Name>
+          <Page isRef="11" />
+          <Parent isRef="11" />
+          <ProgressConditions isList="true" count="0" />
+          <Series Ref="41" type="Stimulsoft.Dashboard.Components.Progress.StiSeriesProgressMeter" isKey="true">
+            <Expression>TargetSales.CategoryName</Expression>
+            <Key>535203c09c48493fa7a2d80f4bae3b87</Key>
+            <Label>CategoryName</Label>
+          </Series>
+          <SeriesColors />
+          <Target Ref="42" type="Stimulsoft.Dashboard.Components.Progress.StiTargetProgressMeter" isKey="true">
+            <Expression>Sum(TargetSales.Target)</Expression>
+            <Key>350806c7e09e4772b3464883565ec6dc</Key>
+            <Label>Target</Label>
+          </Target>
+          <Title Ref="43" type="Stimulsoft.Dashboard.Components.StiTitle" isKey="true">
+            <Font>Arial,11</Font>
+            <Text>Progress</Text>
+            <Visible>False</Visible>
+          </Title>
+          <TopN Ref="44" type="Stimulsoft.Data.Engine.StiDataTopN" isKey="true" />
+          <TransformActions isList="true" count="0" />
+          <TransformFilters isList="true" count="0" />
+          <TransformSorts isList="true" count="0" />
+          <UserSorts isList="true" count="0" />
+          <Value Ref="45" type="Stimulsoft.Dashboard.Components.Progress.StiValueProgressMeter" isKey="true">
+            <Expression>Sum(TargetSales.Sales)</Expression>
+            <Key>d97e1a8af0074e408b679979abaf5dee</Key>
+            <Label>Sales</Label>
+          </Value>
+        </Progress1>
+        <TreeView1 Ref="46" type="Stimulsoft.Dashboard.Components.TreeView.StiTreeViewElement" isKey="true">
+          <ClientRectangle>0,40,200,300</ClientRectangle>
+          <DataFilters isList="true" count="0" />
+          <Expressions isList="true" count="0" />
+          <Font>Arial,8</Font>
+          <Guid>6163d9bb69ca4f2cb433f51c1cb05de9</Guid>
+          <KeyMeters isList="true" count="2">
+            <Item18 Ref="47" type="Stimulsoft.Dashboard.Components.TreeView.StiKeyTreeViewMeter" isKey="true">
+              <Expression>TargetSales.CategoryName</Expression>
+              <Key>e7c001ba606f483499c4e2701e4e2c44</Key>
+              <Label>CategoryName</Label>
+            </Item18>
+            <Item19 Ref="48" type="Stimulsoft.Dashboard.Components.TreeView.StiKeyTreeViewMeter" isKey="true">
+              <Expression>TargetSales.ProductsName</Expression>
+              <Key>15c5c17b1d1b4f9984ed1f7159842e62</Key>
+              <Label>ProductsName</Label>
+            </Item19>
+          </KeyMeters>
+          <Name>TreeView1</Name>
+          <Page isRef="11" />
+          <Parent isRef="11" />
+          <ShowAllValue>True</ShowAllValue>
+          <ShowBlanks>True</ShowBlanks>
+          <Title Ref="49" type="Stimulsoft.Dashboard.Components.StiTitle" isKey="true">
+            <Font>Arial,11</Font>
+            <Text>Tree View</Text>
+            <Visible>False</Visible>
+          </Title>
+          <TransformActions isList="true" count="0" />
+          <TransformFilters isList="true" count="0" />
+          <TransformSorts isList="true" count="0" />
+          <UserFilters isList="true" count="0" />
+        </TreeView1>
+        <Text1 Ref="50" type="Stimulsoft.Dashboard.Components.Text.StiTextElement" isKey="true">
+          <ClientRectangle>0,0,1180,40</ClientRectangle>
+          <Expressions isList="true" count="0" />
+          <Guid>6e98475d8d5346c7816fc70bc5ac3a90</Guid>
+          <Name>Text1</Name>
+          <Padding>0,0,0,0</Padding>
+          <Page isRef="11" />
+          <Parent isRef="11" />
+          <SizeMode>Fit</SizeMode>
+          <Text>&lt;font face="Arial" size="18"&gt;&lt;text-align="Center"&gt;&lt;b&gt;Sales Statistics of US Fast Food&lt;/b&gt;&lt;/text-align&gt;&lt;/font&gt;</Text>
+          <Title Ref="51" type="Stimulsoft.Dashboard.Components.StiTitle" isKey="true">
+            <Font>Arial,11</Font>
+            <Text>Text</Text>
+            <Visible>False</Visible>
+          </Title>
+        </Text1>
+      </Components>
+      <DashboardWatermark Ref="52" type="Stimulsoft.Base.Drawing.StiAdvancedWatermark" isKey="true">
+        <TextColor>Gray</TextColor>
+        <TextFont>Arial,36</TextFont>
+        <WeaveMajorColor>119, 119, 119, 119</WeaveMajorColor>
+        <WeaveMinorColor>85, 119, 119, 119</WeaveMinorColor>
+      </DashboardWatermark>
+      <Expressions isList="true" count="0" />
+      <Guid>508fa7160853426bb049fb7e5940e342</Guid>
+      <Name>Dashboard1</Name>
+      <Report isRef="0" />
+    </Dashboard1>
+  </Pages>
+  <ReferencedAssemblies isList="true" count="8">
+    <value>System.Dll</value>
+    <value>System.Drawing.Dll</value>
+    <value>System.Windows.Forms.Dll</value>
+    <value>System.Data.Dll</value>
+    <value>System.Xml.Dll</value>
+    <value>Stimulsoft.Controls.Dll</value>
+    <value>Stimulsoft.Base.Dll</value>
+    <value>Stimulsoft.Report.Dll</value>
+  </ReferencedAssemblies>
+  <ReportAlias>Report</ReportAlias>
+  <ReportAuthor>Seyed Soheil Amini</ReportAuthor>
+  <ReportChanged>6/20/2024 11:39:32 AM</ReportChanged>
+  <ReportCreated>6/20/2024 10:40:50 AM</ReportCreated>
+  <ReportGuid>c93262b7908d4bc4be155a813103a898</ReportGuid>
+  <ReportName>Report</ReportName>
+  <ReportUnit>Inches</ReportUnit>
+  <ReportVersion>2024.2.6.0</ReportVersion>
+  <Script>using System;
+using System.Drawing;
+using System.Windows.Forms;
+using System.Data;
+using Stimulsoft.Controls;
+using Stimulsoft.Base.Drawing;
+using Stimulsoft.Report;
+using Stimulsoft.Report.Dialogs;
+using Stimulsoft.Report.Components;
+
+namespace Reports
+{
+    public class Report : Stimulsoft.Report.StiReport
+    {
+        public Report()        {
+            this.InitializeComponent();
+        }
+
+        #region StiReport Designer generated code - do not modify
+		#endregion StiReport Designer generated code - do not modify
+    }
+}
+</Script>
+  <ScriptLanguage>CSharp</ScriptLanguage>
+  <Styles isList="true" count="0" />
+</StiSerializer>
